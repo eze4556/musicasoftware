@@ -1,7 +1,7 @@
 /* Estilos principales para el contenedor del login */
 .login-container {
   text-align: center;
-  margin-top: 100px;
+  // margin-top: 100px;
   padding: 20px;
 }
 
@@ -45,4 +45,27 @@
 ion-content {
   --background: #34aecc;
   padding: 16px;
+}
+/* Estilos para la imagen */
+.login-img {
+  width: 100%;
+  max-width: 250px; /* Ajusta el tamaño máximo */
+  height: auto;
+  margin: 20px 0; /* Espaciado arriba y abajo */
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Centrar la imagen */
+}
+
+
+
+/* Estilo de "R.E.C" en la esquina inferior derecha */
+.rec-text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.6); /* Sombra verde para resaltar */
 }
