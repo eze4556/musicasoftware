@@ -1,0 +1,48 @@
+/* Estilos principales para el contenedor del login */
+.login-container {
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* Estilo del título del login */
+.login-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Estilos del campo de entrada */
+.input-item {
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.input-field {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Estilo del botón de inicio de sesión */
+.login-button {
+  background-color: white;
+  color: #372061;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Mensaje de éxito */
+.success-message {
+  text-align: center;
+  margin-top: 100px;
+  color: white;
+  font-size: 20px;
+}
+ion-content {
+  --background: #34aecc;
+  padding: 16px;
+}

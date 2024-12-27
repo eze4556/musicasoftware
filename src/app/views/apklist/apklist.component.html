@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Subir Música</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-background">
+  <ion-card class="music-card">
+    <ion-card-header>
+      <ion-card-title color="primary" style="text-align: center;">Subir Nueva Música</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="floating">Título de la Música</ion-label>
+        <ion-input [(ngModel)]="music.title" placeholder="Ingrese el título"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Artista</ion-label>
+        <ion-input [(ngModel)]="music.artist" placeholder="Ingrese el artista"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select [(ngModel)]="music.genre" placeholder="Seleccione un género">
+          <ion-select-option *ngFor="let genre of genres" [value]="genre.value">
+            {{ genre.label }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label>Subir Archivos de Audio</ion-label>
+        <input type="file" (change)="onFileSelected($event)" multiple accept="audio/*" />
+      </ion-item>
+
+      <ion-button expand="block" color="primary" (click)="uploadMusic()">
+        Subir Música
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+<!-- <ion-card *ngIf="uploadedMusic.length > 0">
+    <ion-card-header>
+      <ion-card-title color="primary" style="text-align: center;">Música Subida</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let track of uploadedMusic">
+          <ion-label>
+            <h2>{{ track.title }}</h2>
+            <p>Artista: {{ track.artist }}</p>
+            <p>Género: {{ track.genre }}</p>
+            <p>Fecha de Lanzamiento: {{ track.releaseDate | date }}</p>
+          </ion-label>
+          <ion-button fill="outline" color="primary" (click)="playAudio(track.audioUrls)">
+            Reproducir
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-text *ngIf="uploadedMusic.length === 0" color="medium" style="text-align: center; display: block;">
+    No hay música subida.
+  </ion-text> -->
+
+
+
+
+
+
+
+</ion-content>

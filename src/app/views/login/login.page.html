@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>SOFTWARE MUSICA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="background-color: #372061;">
+  <div class="login-container">
+    <h1 class="login-title">Login</h1>
+
+    <!-- Campo de Contraseña -->
+    <ion-item class="input-item">
+      <ion-input
+        [(ngModel)]="password"
+        type="password"
+        placeholder="Contraseña"
+        class="input-field"
+        style="text-align: center;">
+      </ion-input>
+    </ion-item>
+
+    <!-- Botón para iniciar sesión -->
+    <ion-button expand="full" (click)="login()" class="login-button">
+      Iniciar sesión
+    </ion-button>
+  </div>
+
+  
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="selectedGenre">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      {{ selectedGenre ? selectedGenre : 'Géneros de Música' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-background">
+
+  <!-- Pantalla 1: Mostrar Géneros -->
+  <ion-list *ngIf="!selectedGenre">
+    <ng-container *ngFor="let genre of getGenres()">
+      <ion-item button (click)="selectGenre(genre)">
+        <ion-label>
+          <h2>{{ genre }}</h2>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <ion-text *ngIf="!selectedGenre && getGenres().length === 0" color="medium" style="text-align: center; display: block;">
+    No hay géneros disponibles.
+  </ion-text>
+
+  <!-- Pantalla 2: Mostrar Canciones dentro del Género Seleccionado -->
+  <ion-list *ngIf="selectedGenre">
+    <ng-container *ngFor="let track of musicByGenre[selectedGenre]">
+      <ion-item>
+        <ion-label>
+          <h3>{{ track.title }}</h3>
+          <p>Artista: {{ track.artist }}</p>
+          <p>Fecha de Lanzamiento: {{ track.releaseDate | date }}</p>
+        </ion-label>
+<ion-button fill="outline" color="primary" (click)="playAudio(track.audioUrls[0])">
+          Reproducir
+        </ion-button>
+
+         <ion-button fill="outline" color="danger" (click)="pauseAudio()">
+          Pausar
+        </ion-button>
+
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <ion-text *ngIf="selectedGenre && musicByGenre[selectedGenre]?.length === 0" color="medium" style="text-align: center; display: block;">
+    No hay música disponible en este género.
+  </ion-text>
+</ion-content>
